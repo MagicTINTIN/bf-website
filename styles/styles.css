@@ -36,7 +36,7 @@ html, body {
 }
 
 nav {
-    height: 9vh;
+    height: 7vh;
     width: 100%;
     background-color: rgb(70, 70, 70);
     display: flex;
@@ -117,6 +117,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 16px;
 }
 
 /* #ascii::-webkit-scrollbar {
@@ -153,7 +154,7 @@ h3 {
 
 #output {
     color: white;
-    height: 20vh;
+    height: 15vh;
     max-height: 20vh;
     overflow-y: scroll;
     
@@ -161,9 +162,11 @@ h3 {
 
 #memory {
     color: white;
-    height: 5vh;
+    height: 7vh;
     max-width: 100%;
     overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 ::-webkit-scrollbar {
@@ -229,4 +232,21 @@ h3 {
 }
 p {
     margin: 2px;
+}
+
+.thideontel {
+    display:block;
+}
+
+@media only screen and (max-width: 850px) {
+    .thideontel {
+        display:none;
+    }
+}
+
+
+@media only screen and (max-width: 550px) {
+    #ascii {
+        font-size:8px;
+    }
 }
