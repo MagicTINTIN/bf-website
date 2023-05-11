@@ -1,13 +1,11 @@
 html, body {
-    width:90vw;
-    height: 90vh;
     padding: 0;
     margin: auto;
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-    background-color: rgb(26, 25, 25);
+    background-color: rgb(29, 27, 27);
     font-family: Arial, Helvetica, sans-serif
 }
 
@@ -71,20 +69,69 @@ nav div {
     background-color: rgb(95, 95, 95);
 }
 
+html {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    width:98vw;
+    height: 98vh;
+}
+
+tr {
+    background-color: rgb(39, 39, 39);
+}
+
+tr:hover {
+    background-color: rgb(87, 87, 87);
+}
+
 body {
+
+    width:100%;
+    height: 100%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#bfcode {
+    width: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-body div {
+#ascii {
+    width: 16%;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+    color: white;
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* #ascii::-webkit-scrollbar {
+    height: 5px;
+    background: rgba(131, 131, 131, 0.384);
+} */
+
+#bfcode div {
     background-color: rgb(48, 48, 48);
     min-height: 1%;
     width: 100%;
 }
 
 #codeinputdiv {
-    height: 50vh;
+    height: 40vh;
     width: 100%;
     background-color: rgb(54, 53, 52);
     color: white;
@@ -98,7 +145,7 @@ h3 {
 }
 
 #codeinput {
-    height: 50vh;
+    height: 100%;
     width: 100%;
     background-color: rgb(54, 53, 52);
     color: white;
@@ -106,10 +153,46 @@ h3 {
 
 #output {
     color: white;
+    height: 20vh;
+    max-height: 20vh;
+    overflow-y: scroll;
+    
 }
 
 #memory {
     color: white;
+    height: 5vh;
+    max-width: 100%;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background: rgba(131, 131, 131, 0.384);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(151, 151, 151); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; 
+}
+
+#timesl {
+    background: linear-gradient(to right, #dddddd 0%, #d4d4d4 50%, #dfdfdf 50%, #fff 100%);
+  border: solid 1px #9c9c9c;
+  outline: none;
 }
 
 .info {
