@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Brainfuck | Softplus</title>
+    <link href="styles/styles.css" rel="stylesheet">
+    <meta name="author" content="ALC ProduXion/Softplus">
+    <meta name="description" content="Brainfuck compiler/interpretor">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <div id="restart" class="navbtn" onclick="resetTime()"><span>⏹️</span></div>
+            <div id="startstop" class="navbtn" onclick="playpause()"><span id="playpause">▶️</span></div>
+            <div class="timeslider navbtn">
+                <input type="range" min="1" max="1000" value="50" class="slider" id="timesl" oninput="actucounter();">
+                <span id="timechoice">50ms</span>
+            </div>
+        </div>
+    </nav>
+    <h3>Input code</h3>
+    <div id="codeinputdiv">
+        <textarea id="codeinput" name="codeinput"></textarea>
+        <!-- <input name="codeInput" type="text" id="codeinput" /> : rows="4" cols="50" -->
+    </div>
+    <h3>Output text</h3>
+    <div id="output">
+    </div>
+    <h3>Memory</h3>
+    <div id="memory">
+        [<span style="font-weight: bold;">0</span>]
+    </div>
+    <div id="nojs">
+        <div>
+            <p>Hmm... une erreur est survenue.<br><br>Il semblerait que votre navigateur bloque le JavaScript...<br>
+                Essayez de désactiver votre bloqueur de scripts</p>
+        </div>
+    </div>
+    <script src="./scripts/bf.js"></script>
+</body>
+
+</html>
