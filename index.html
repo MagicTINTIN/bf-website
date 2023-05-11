@@ -19,10 +19,11 @@
             <div>
                 <div id="restart" class="navbtn" onclick="resetTime()"><span>⏹️</span></div>
                 <div id="startstop" class="navbtn" onclick="playpause()"><span id="playpause">▶️</span></div>
+                <div id="quickend" class="navbtn" onclick="quickend()"><span>⏩</span></div>
                 <div class="timeslider navbtn">
                     <input type="range" min="1" max="1000" value="50" class="slider" id="timesl"
                         oninput="actucounter();">
-                    <span id="timechoice">50ms</span>
+                    <span id="timechoice">20ms</span>
                 </div>
             </div>
         </nav>
@@ -30,7 +31,7 @@
 
         <h3>Input code</h3>
         <div id="codeinputdiv">
-            <textarea id="codeinput" name="codeinput"></textarea>
+            <textarea type="numeric" id="codeinput" name="codeinput"></textarea>
             <!-- <input name="codeInput" type="text" id="codeinput" /> : rows="4" cols="50" -->
         </div>
         <h3>Output text</h3>
@@ -38,7 +39,7 @@
         </div>
         <h3>Memory</h3>
         <div id="memory">
-            [<span style="font-weight: bold;">0</span>]
+            [ <span style="font-weight: bold;">0</span> ]
         </div>
         <div id="nojs">
             <div>
@@ -46,6 +47,7 @@
                     Essayez de désactiver votre bloqueur de scripts</p>
             </div>
         </div>
+        <script src="./scripts/exec.js"></script>
         <script src="./scripts/bftimed.js"></script>
     </div>
     <div id="ascii">
