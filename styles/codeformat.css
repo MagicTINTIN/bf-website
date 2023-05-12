@@ -1,0 +1,9 @@
+.codepos {
+    font-weight: bold;
+    background-color: var(--blue);
+}
+
+.mempos {
+    font-weight: bold;
+    background-color: var(--gray);
+}

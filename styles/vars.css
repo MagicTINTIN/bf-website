@@ -1,0 +1,24 @@
+/* Dark mode */
+:root {
+    --blackest: #07020D;
+    --black: #1B161D;
+    --black-hover: #221D24;
+    --dark-gray: #2E292D;
+    --dark-desat-gray: #342F33;
+    --gray: #554F4C;
+    --light-gray: #A39B8B;
+    --white: #F1E9DB;
+    --dark-blue: #325D76;
+    --blue: #5DB7DE;
+    --light-blue: #A7D0DD;
+    --dark-red: #80382E;
+    --red: #D1462F; 
+    --dark-green: #515C41;
+    --green: #748E54;
+    --dark-yellorange: #905C17;
+    --yellorange: #F18F01; 
+    --dark-pink: #7C3396;
+    --pink: #CA3CFF; 
+
+    --websitefonts: Arial, Helvetica, sans-serif;
+}

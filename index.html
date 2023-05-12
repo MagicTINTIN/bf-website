@@ -9,7 +9,11 @@
     <meta name="viewport"
         content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <title>Brainfuck | Softplus</title>
+
+    <link href="styles/vars.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/inputrange.css" rel="stylesheet">
+    <link href="styles/codeformat.css" rel="stylesheet">
     <meta name="author" content="ALC ProduXion/Softplus">
     <meta name="description" content="Online Brainfuck compiler">
 
@@ -21,7 +25,7 @@
     <div id="bfcode">
 
         <nav>
-            <div>
+            <section>
                 <div id="restart" class="navbtn" onclick="resetTime()"><span>⏹️</span></div>
                 <div id="startstop" class="navbtn" onclick="playpause()"><span id="playpause">▶️</span></div>
                 <div id="quickend" class="navbtn" onclick="quickend()"><span>⏩</span></div>
@@ -30,22 +34,22 @@
                         oninput="actucounter();">
                     <span id="timechoice">20ms</span>
                 </div>
-            </div>
+            </section>
         </nav>
 
 
         <h3>Input code</h3>
-        <div id="codeinputdiv">
+        <article id="codeinputdiv">
             <textarea type="numeric" id="codeinput" name="codeinput"></textarea>
             <!-- <input name="codeInput" type="text" id="codeinput" /> : rows="4" cols="50" -->
-        </div>
+        </article>
         <p style="font-size: xx-small; color: white;">Use "!" to pause the program during the execution.</p>
         <h3>Output text</h3>
         <div id="output">
         </div>
         <h3>Memory</h3>
         <div id="memory">
-            [ <span style="font-weight: bold;">0</span> ]
+            [ <span class="mempos">0</span> ]
         </div>
         <div id="nojs">
             <div>
@@ -56,6 +60,7 @@
         <script src="./scripts/exec.js"></script>
         <script src="./scripts/bftimed.js"></script>
     </div>
+    <div class="vertsep"></div>
     <div id="ascii">
         <table>
             <thead>
@@ -66,7 +71,11 @@
                 </tr>
             </thead>
             <tbody>
-
+                <tr>
+                    <td style="color:rgba(240, 248, 255, 0)">0</td>
+                    <td class="thideontel"></td>
+                    <td> </td>
+                </tr>
                 <tr>
                     <td>0</td>
                     <td class="thideontel">00</td>

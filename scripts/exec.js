@@ -29,7 +29,7 @@ function executer() {
 
         const cmd = code[res.posProg];
         res.step++;
-        let tmpcode = code.replaceAt([res.posProg], `<span style='font-weight: bold; background:cyan; '>${code[res.posProg]}</span>`)
+        let tmpcode = code.replaceAt([res.posProg], `<span class='codepos'>${code[res.posProg]}</span>`)
 
         //console.log(tmpcode);
         document.getElementById('codeinput').innerHTML = tmpcode.split("\n").join("<br>").split("<!").join("&#60;!")
@@ -117,7 +117,7 @@ function executer() {
         // actualising
         let affmem = res.mem.slice();
         if (res.posMem < res.mem.length)
-            affmem[res.posMem] = `<span style="font-weight: bold;">${affmem[res.posMem]}</span>`;
+            affmem[res.posMem] = `<span class='mempos'>${affmem[res.posMem]}</span>`;
         document.getElementById("memory").innerHTML = "[ " + affmem.join(" | ") + " ]<br>Memory frame n°" + res.posMem
         document.getElementById("output").innerText = res.str;
 
@@ -137,7 +137,7 @@ function quickexecuter() {
 
             const cmd = code[res.posProg];
             res.step++;
-            let tmpcode = code.replaceAt([res.posProg], `<span style='font-weight: bold; background:cyan; '>${code[res.posProg]}</span>`)
+            let tmpcode = code.replaceAt([res.posProg], `<span class='codepos'>${code[res.posProg]}</span>`)
 
             //console.log(tmpcode);
             document.getElementById('codeinput').innerHTML = tmpcode.split("\n").join("<br>").split("<!").join("&#60;!");
@@ -227,7 +227,7 @@ function quickexecuter() {
             // actualising
             let affmem = res.mem.slice();
             if (res.posMem < res.mem.length)
-                affmem[res.posMem] = `<span style="font-weight: bold;">${affmem[res.posMem]}</span>`;
+                affmem[res.posMem] = `<span class='mempos'>${affmem[res.posMem]}</span>`;
             document.getElementById("memory").innerHTML = "[ " + affmem.join(" | ") + " ]<br>Memory frame n°" + res.posMem
             document.getElementById("output").innerText = res.str;
 
