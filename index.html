@@ -25,11 +25,40 @@
     <div id="bfcode">
 
         <nav>
-            <section>
-                <div id="restart" class="navbtn" onclick="resetTime()"><span>⏹️</span></div>
-                <div id="startstop" class="navbtn" onclick="playpause()"><span id="playpause">▶️</span></div>
-                <div id="quickend" class="navbtn" onclick="quickend()"><span>⏩</span></div>
-                <div class="timeslider navbtn">
+            <section class="centeringnav">
+                <section class="navcolumnbtn">
+                    <img id="save" style="filter: sepia(0);" class="navimg navclmnbtn" onclick="save()"
+                        src="images/save.jpg">
+                    <img id="load" style="filter: sepia(0);" class="navimg navclmnbtn" onclick="load()"
+                        src="images/load.jpg">
+                </section>
+                <section class="navcolumnbtn">
+                    <img id="brackets" style="filter: saturate(0);" class="navimg navclmnbtn" onclick="brackets()"
+                        src="images/brackets.jpg">
+
+                    <img id="colors" style="filter: saturate(0);" class="navimg navclmnbtn" onclick="colors()"
+                        src="images/color.jpg">
+                </section>
+                <img id="restart" class="navimg navbtn" onclick="resetTime()" src="images/stop.jpg">
+
+                <img id="playpause" class="navimg navbtn" onclick="playpause()" src="images/play.jpg">
+
+                <img id="step" class="navimg navbtn" onclick="step()" src="images/step.jpg">
+
+                <img id="quickend" class="navimg navbtn" onclick="quickend()" src="images/fastforward.jpg">
+                <section class="navcolumnbtnsafe">
+                    <section class="alignsafe">
+                        <img id="safe" style="filter: saturate(0);" class="navimg navclmnbtn" onclick="safe()"
+                            src="images/safe.jpg">
+                    </section>
+                    <p style="font-size: xx-small; color: white; text-align: center;">max steps</p>
+
+                    <section class="alignsafe">
+                        <input id="safemaxsteps" class="inputsafe" type="number" value="10000" />
+                    </section>
+                </section>
+                <!-- <img id="step" class="navimg navbtn"> -->
+                <div class="timeslider navsld">
                     <input type="range" min="1" max="1000" value="50" class="slider" id="timesl"
                         oninput="actucounter();">
                     <span id="timechoice">20ms</span>

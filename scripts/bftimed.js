@@ -60,7 +60,7 @@ function resetTime() {
     document.getElementById('memory').innerHTML = "[ <span style='font-weight: bold; '>0</span> ]";
     started = false;
     pause = false;
-    document.getElementById("playpause").innerHTML = "▶️";
+    document.getElementById("playpause").src = "images/play.jpg";
     clearInterval(interval)
     resetInput();
 }
@@ -71,13 +71,13 @@ function playpause() {
         quickstarted = false;
         pause = false;
         started = true;
-        document.getElementById("playpause").innerHTML = (pause) ? "▶️" : "⏸️";
+        document.getElementById("playpause").src = (pause) ? "images/play.jpg" : "images/pause.jpg";
         start();
     }
     else {
         pause = !pause;
         quickstarted = false;
-        document.getElementById("playpause").innerHTML = (pause) ? "▶️" : "⏸️";
+        document.getElementById("playpause").src = (pause) ? "images/play.jpg" : "images/pause.jpg";
         clearInterval(interval);
         interval = setInterval(() => {
             executer();
@@ -151,7 +151,8 @@ function start() {
     document.getElementById('codeinput').outerHTML = "<p id='codeinput'>"
         + "</p>";
     document.getElementById('codeinput').innerText = savedcode
-    document.getElementById("playpause").innerHTML = "⏸️";
+    document.getElementById("playpause").src = "images/pause.jpg";
+    //document.getElementById("playpause").src = "images/pause.jpg"
     exe(savedcode);
 }
 
@@ -164,13 +165,13 @@ function quickend() {
         document.getElementById('codeinput').outerHTML = "<p id='codeinput'>"
             + "</p>";
         document.getElementById('codeinput').innerText = savedcode
-        document.getElementById("playpause").innerHTML = "⏸️";
+        document.getElementById("playpause").src = "images/pause.jpg";
         quickexe(savedcode);
     }
     else {
         quickstarted = true;
         pause = false;
-        document.getElementById("playpause").innerHTML = "⏸️";
+        document.getElementById("playpause").src = "images/pause.jpg";
         quickexecuter();
     }
 }

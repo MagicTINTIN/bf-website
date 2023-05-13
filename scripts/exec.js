@@ -11,7 +11,7 @@ function executer() {
             res.success = false;
             res.str += "\n**ERROR :** Too many steps";
         }
-        document.getElementById("playpause").innerHTML = "▶️";
+        document.getElementById("playpause").src = "images/play.jpg";
 
         started = false;
         pause = false;
@@ -49,7 +49,7 @@ function executer() {
         }
         else if (cmd == "!") {
             pause = true;
-            document.getElementById("playpause").innerHTML = "▶️";
+            document.getElementById("playpause").src = "images/play.jpg";
         }
         else if (cmd == "]") {
             if (debugbf) console.log("] pointing", res.posMem, res.mem[res.posMem]);
@@ -93,7 +93,7 @@ function executer() {
                 resetInput();
                 document.getElementById("output").innerHTML = res.str;
                 alert("ERROR : Cursor tried to go before first memory frame");
-                document.getElementById("playpause").innerHTML = "▶️";
+                document.getElementById("playpause").src = "images/play.jpg";
                 return res;
             }
         }
@@ -159,7 +159,7 @@ function quickexecuter() {
                 pause = true;
                 res.posProg++;
                 //console.log(tmpcode);
-                return document.getElementById("playpause").innerHTML = "▶️";
+                return document.getElementById("playpause").src = "images/play.jpg";
             }
             else if (cmd == "]") {
                 if (debugbf) console.log("] pointing", res.posMem, res.mem[res.posMem]);
@@ -203,7 +203,7 @@ function quickexecuter() {
                     resetInput();
                     document.getElementById("output").innerHTML = res.str;
                     alert("ERROR : Cursor tried to go before first memory frame");
-                    document.getElementById("playpause").innerHTML = "▶️";
+                    document.getElementById("playpause").src = "images/play.jpg";
                     return res;
                 }
             }
@@ -240,7 +240,7 @@ function quickexecuter() {
         res.success = false;
         res.str += "\n**ERROR :** Too many steps";
     }
-    document.getElementById("playpause").innerHTML = "▶️";
+    document.getElementById("playpause").src = "images/play.jpg";
 
     started = false;
     pause = false;

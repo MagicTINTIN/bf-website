@@ -52,7 +52,7 @@ nav {
     border: var(--gray) 1px solid;
 }
 
-nav section {
+nav .centeringnav {
     height: 70%;
     width: 100%;
     display: flex;
@@ -62,15 +62,78 @@ nav section {
     font-weight: bolder;
 }
 
+.navimg {
+    border: var(--gray) 1px solid;
+}
+
+.navimg:hover {
+    border: var(--light-gray) 1px solid;
+    filter: brightness(1.2);
+}
+
+.navimg:active {
+    filter: brightness(.7);
+}
+
 .navbtn {
-    width: 10%;
-    height: 100%;
-    border-radius: 20px;
+    max-width: 4.9vh;
+    height: 4.9vh;
+    width: auto;
     display: flex;
     flex-direction:column;
     justify-content: space-around;
     text-align: center;
 }
+
+.navcolumnbtn {
+    height: 100%;
+    max-width: 10%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+.navcolumnbtnsafe {
+    height: 100%;
+    width: 5%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+.alignsafe {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+.inputsafe {
+    width: 100%;
+    font-size: xx-small;
+}
+
+.navclmnbtn {
+    height: 3vh;
+    width: 3vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.navsld {
+    max-width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.navsld:hover {
+    filter: brightness(1.2);
+}
+
 
 html {
     display: flex;
@@ -183,6 +246,17 @@ h3 {
 #codeinput:hover {
     border: var(--light-gray) 1px solid;
 }
+
+nav input {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border: var(--gray) 1px solid;
+}
+
+nav:hover {
+    border: var(--light-gray) 1px solid;
+}
+
 
 #output {
     color: var(--white);
