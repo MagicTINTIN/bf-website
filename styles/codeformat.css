@@ -84,7 +84,7 @@
 }
 
 .linkedbracket {
-    background-color: var(--gray);
+    background-color: var(--not-so-light-gray);
     /* font-weight: bold; */
     /* border: var(--white) -1px solid; */
 }

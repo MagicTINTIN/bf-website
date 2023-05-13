@@ -27,9 +27,9 @@ function colors() {
     }
     if (started) {
         let tmpcode = code.replaceAt([res.posProg - 1], `<span class='codepos'>${code[res.posProg - 1]}</span>`);
-        document.querySelector(".custom-area").innerHTML = applyColors(tmpcode.split("\n").join("<br>")).split("<!").join("&#60;!")
+        document.querySelector(".custom-area").innerHTML = applyColors(tmpcode).split("\n").join("<br>").split("<!").join("&#60;!")
     } else {
-        document.querySelector(".custom-area").innerHTML = applyColors(textArea.value);
+        document.querySelector(".custom-area").innerHTML = applyColors(textArea.value).split("<!").join("&#60;!");
     }
 }
 
@@ -44,8 +44,15 @@ function brackets() {
     }
     if (started) {
         let tmpcode = code.replaceAt([res.posProg - 1], `<span class='codepos'>${code[res.posProg - 1]}</span>`);
-        document.querySelector(".custom-area").innerHTML = applyColors(tmpcode.split("\n").join("<br>")).split("<!").join("&#60;!")
+        document.querySelector(".custom-area").innerHTML = applyColors(tmpcode).split("\n").join("<br>").split("<!").join("&#60;!")
     } else {
-        document.querySelector(".custom-area").innerHTML = applyColors(textArea.value);
+        document.querySelector(".custom-area").innerHTML = applyColors(textArea.value).split("<!").join("&#60;!");
     }
+}
+
+function save() {
+    alert("Saves througth cookies will be possible later")
+}
+function load() {
+    alert("Saves througth cookies will be possible later")
 }
