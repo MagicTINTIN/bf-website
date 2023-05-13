@@ -84,7 +84,7 @@ body {
 }
 
 #bfcode {
-    width: 84%;
+    width: 84vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -117,14 +117,14 @@ textarea {
     background: rgba(131, 131, 131, 0.384);
 } */
 
-#bfcode div {
+.bfcodediv {
     background-color: var(--dark-gray);
     min-height: 1%;
     width: 100%;
     border: var(--gray) 1px solid;
 }
 
-#bfcode div:hover {
+.bfcodediv:hover {
     border: var(--light-gray) 1px solid;
 }
 
@@ -133,6 +133,12 @@ textarea {
     width: 100%;
     background-color: var(--dark-gray);
     color: var(--white);
+
+    border: var(--gray) 1px solid;
+}
+
+#codeinputdiv:hover {
+    border: var(--light-gray) 1px solid;
 }
 
 h3 {
@@ -142,18 +148,17 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#codeinput {
+/* #codeinput {
     height: 100%;
     width: 100%;
     background-color: var(--dark-gray);
     color: var(--white);
-    border: var(--gray) 1px solid;
     overflow-y: auto;
-}
+} */
 
-#codeinput:hover {
+/* #codeinput:hover {
     border: var(--light-gray) 1px solid;
-}
+} */
 
 
 #output {

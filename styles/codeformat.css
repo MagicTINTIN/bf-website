@@ -7,3 +7,73 @@
     font-weight: bold;
     background-color: var(--gray);
 }
+
+/* INPUT COLORATION */
+
+.backdrop, #codeinput {
+  font: 12px 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  width: 84vw;
+  height: 40vh;
+}
+
+#codeinput {
+  margin: 0;
+  position: absolute;
+  border-radius: 0;
+  background-color: transparent;
+  color: transparent;
+  caret-color: var(--white);
+  z-index: 2;
+  resize: none;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#codeinput::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.backdrop {
+  position: absolute;
+  z-index: 1;
+  border: 2px solid transparent;
+  overflow: auto;
+  pointer-events: none;
+}
+
+.custom-area {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* CODE COLORS */
+
+.codecrease {
+    /* color: #748E54; */
+    color: #D5FF57;
+}
+
+.codemove {
+    /* color: #D1462F; */
+    color: #FF8566;
+}
+
+.codeloop {
+    /* color: #F58A07; */
+    color: #F3BA71;
+}
+
+.codeio {
+    /* color: #CA3CFF; */
+    color: #EA80FF;
+}
+
+.codetext {
+    color: var(--light-gray);
+}

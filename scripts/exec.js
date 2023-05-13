@@ -45,7 +45,7 @@ function executer() {
         let tmpcode = code.replaceAt([res.posProg], `<span class='codepos'>${code[res.posProg]}</span>`)
 
         //console.log(tmpcode);
-        document.getElementById('codeinput').innerHTML = tmpcode.split("\n").join("<br>").split("<!").join("&#60;!")
+        document.getElementById('customarea').innerHTML = tmpcode.split("\n").join("<br>").split("<!").join("&#60;!")
         if (cmd == "[") {
             if (debugbf) console.log("[ pointing", res.posMem, res.mem[res.posMem]);
             if (res.mem[res.posMem] == 0) {
@@ -167,7 +167,7 @@ function quickexecuter() {
             let tmpcode = code.replaceAt([res.posProg], `<span class='codepos'>${code[res.posProg]}</span>`)
 
             //console.log(tmpcode);
-            document.getElementById('codeinput').innerHTML = tmpcode.split("\n").join("<br>").split("<!").join("&#60;!");
+            document.getElementById('customarea').innerHTML = tmpcode.split("\n").join("<br>").split("<!").join("&#60;!");
             if (cmd == "[") {
                 if (debugbf) console.log("[ pointing", res.posMem, res.mem[res.posMem]);
                 if (res.mem[res.posMem] == 0) {

@@ -67,18 +67,24 @@
 
         <h3>Input code</h3>
         <article id="codeinputdiv">
-            <textarea type="numeric" id="codeinput" name="codeinput"></textarea>
+            <div class="backdrop">
+                <div class="custom-area codetext" id="customarea">
+                    <!-- Cloned text with colors will go here -->
+                </div>
+            </div>
+            <textarea id="codeinput"></textarea>
+            <!-- <textarea type="numeric" id="codeinput" name="codeinput"></textarea> -->
             <!-- <input name="codeInput" type="text" id="codeinput" /> : rows="4" cols="50" -->
         </article>
         <p style="font-size: xx-small; color: white;">Use "!" to pause the program during the execution.</p>
         <h3>Output text</h3>
-        <div id="output">
+        <div class="bfcodediv" id="output">
         </div>
         <h3>Memory</h3>
-        <div id="memory">
+        <div class="bfcodediv" id="memory">
             [ <span class="mempos">0</span> ]
         </div>
-        <div id="nojs">
+        <div class="bfcodediv" id="nojs">
             <div>
                 <p>Hmm... une erreur est survenue.<br><br>Il semblerait que votre navigateur bloque le JavaScript...<br>
                     Essayez de désactiver votre bloqueur de scripts</p>
@@ -86,7 +92,8 @@
         </div>
         <script src="./scripts/buttons.js"></script>
         <script src="./scripts/exec.js"></script>
-        <script src="./scripts/bftimed.js"></script>
+        <script src="./scripts/mainfunctions.js"></script>
+        <script src="./scripts/input.js"></script>
     </div>
     <div class="vertsep"></div>
     <div id="ascii">

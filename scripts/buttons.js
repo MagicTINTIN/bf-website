@@ -17,10 +17,14 @@ function colors() {
     if (coloring) {
         coloring = false;
         document.getElementById("colors").classList.add('navimgdisabled')
+        document.getElementById("customarea").classList.remove('codetext')
+        document.querySelector(".custom-area").innerHTML = applyColors(textArea.value);
     }
     else {
         coloring = true;
         document.getElementById("colors").classList.remove('navimgdisabled')
+        document.getElementById("customarea").classList.add('codetext')
+        document.querySelector(".custom-area").innerHTML = applyColors(textArea.value);
     }
 }
 

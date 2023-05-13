@@ -102,9 +102,7 @@ function step() {
             posMem: 0,
         }
 
-        document.getElementById('codeinput').outerHTML = "<p id='codeinput'>"
-            + "</p>";
-        document.getElementById('codeinput').innerText = savedcode
+        document.getElementById('codeinput').setAttribute("disabled", "disabled");
         document.getElementById("playpause").src = "images/pause.jpg";
     }
     quickstarted = false;
@@ -170,19 +168,19 @@ function quickexe(rawcode) {
 }
 
 function resetInput() {
-    document.getElementById('codeinput').outerHTML = `<textarea id="codeinput" name="codeinput"></textarea>`
-    document.getElementById('codeinput').value = savedcode;
+    document.getElementById('codeinput').removeAttribute("disabled", "disabled")
 }
 
 function start() {
     started = true;
     pause = false;
     savedcode = document.getElementById('codeinput').value
-    document.getElementById('codeinput').outerHTML = "<p id='codeinput'>"
-        + "</p>";
-    document.getElementById('codeinput').innerText = savedcode
+    document.getElementById('codeinput').setAttribute("disabled", "disabled")
+    // document.getElementById('codeinput').outerHTML = "<p id='codeinput'>"
+    //     + "</p>";
+    // document.getElementById('codeinput').innerText = savedcode
     document.getElementById("playpause").src = "images/pause.jpg";
-    //document.getElementById("playpause").src = "images/pause.jpg"
+    document.getElementById("playpause").src = "images/pause.jpg"
     exe(savedcode);
 }
 
@@ -192,9 +190,7 @@ function quickend() {
         quickstarted = true;
         pause = false;
         savedcode = document.getElementById('codeinput').value
-        document.getElementById('codeinput').outerHTML = "<p id='codeinput'>"
-            + "</p>";
-        document.getElementById('codeinput').innerText = savedcode
+        document.getElementById('codeinput').setAttribute("disabled", "disabled")
         document.getElementById("playpause").src = "images/pause.jpg";
         quickexe(savedcode);
     }
