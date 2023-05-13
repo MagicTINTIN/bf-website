@@ -216,6 +216,13 @@ p {
     display:block;
 }
 
+#maxstepstxt {
+    font-size: 1vh;
+    display: block;
+    color: white;
+    text-align: center;
+}
+
 @media only screen and (max-width: 850px) {
     .thideontel {
         display:none;
@@ -229,5 +236,11 @@ p {
     }
     th {
         font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #maxstepstxt {
+        display: none;
     }
 }

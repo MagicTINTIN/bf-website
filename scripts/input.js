@@ -17,7 +17,7 @@ let backdrop = document.querySelector(".backdrop");
 // Event listeners.
 
 textArea.addEventListener("input", function () {
-    customArea.innerHTML = applyColors(textArea.value);
+    customArea.innerHTML = applyColors(textArea.value).split("<!").join("&#60;!");
 });
 
 textArea.addEventListener("scroll", function () {
@@ -27,10 +27,10 @@ textArea.addEventListener("scroll", function () {
 function applyColors(text) {
     // let re = new RegExp(Object.keys(colorMap).join("|"), "gi");
     if (coloring) {
-        return text.replace(/\+|\-|\[|\]|\<|\>|\,|\./gi, function (m) {
+        return text.split("<span class='codepos'>").join("{span class='codepos'}").split("</span>").join("{/span}").replace(/\+|\-|\[|\]|\<|\>|\,|\./gi, function (m) {
             let c = colorMap[m.toLowerCase()];
             return `<span class="${c}">${m}</span>`;
-        });
+        }).split("{span class='codepos'}").join("<span class='codepos'>").split("{/span}").join("</span>");
     }
     else {
         return text;

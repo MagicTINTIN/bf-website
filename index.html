@@ -49,7 +49,7 @@
                     <section class="alignsafe">
                         <img id="safe" class="navimg navimgdisabled navclmnbtn" onclick="safe()" src="images/safe.jpg">
                     </section>
-                    <p style="font-size: xx-small; color: white; text-align: center;">max steps</p>
+                    <p id="maxstepstxt">max steps</p>
 
                     <section class="alignsafe">
                         <input id="safemaxsteps" class="inputsafe" type="number" value="10000" oninput="actusafe();" />
@@ -72,7 +72,8 @@
                     <!-- Cloned text with colors will go here -->
                 </div>
             </div>
-            <textarea id="codeinput"></textarea>
+            <textarea id="codeinput" autocomplete="off" autocorrect="off" autocapitalize="off"
+                spellcheck="false"></textarea>
             <!-- <textarea type="numeric" id="codeinput" name="codeinput"></textarea> -->
             <!-- <input name="codeInput" type="text" id="codeinput" /> : rows="4" cols="50" -->
         </article>

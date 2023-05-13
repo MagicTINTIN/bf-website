@@ -137,3 +137,13 @@ nav input {
 nav input:hover {
     border: var(--light-gray) 1px solid;
 }
+
+
+@media only screen and (max-width: 1000px) {
+    .navsld {
+        max-width: 10%;
+    }
+    .navcolumnbtnsafe {
+        width: 20%;
+    }
+}
