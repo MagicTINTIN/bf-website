@@ -82,3 +82,9 @@
 .codetext {
     color: var(--light-gray);
 }
+
+.linkedbracket {
+    background-color: var(--gray);
+    /* font-weight: bold; */
+    /* border: var(--white) -1px solid; */
+}

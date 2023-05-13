@@ -18,23 +18,18 @@ function colors() {
         coloring = false;
         document.getElementById("colors").classList.add('navimgdisabled')
         document.getElementById("customarea").classList.remove('codetext')
-        if (started) {
-            let tmpcode = code.replaceAt([res.posProg - 1], `<span class='codepos'>${code[res.posProg - 1]}</span>`);
-            document.querySelector(".custom-area").innerHTML = applyColors(tmpcode.split("\n").join("<br>")).split("<!").join("&#60;!")
-        } else {
-            document.querySelector(".custom-area").innerHTML = applyColors(textArea.value);
-        }
     }
     else {
         coloring = true;
         document.getElementById("colors").classList.remove('navimgdisabled')
         document.getElementById("customarea").classList.add('codetext')
-        if (started) {
-            let tmpcode = code.replaceAt([res.posProg - 1], `<span class='codepos'>${code[res.posProg - 1]}</span>`);
-            document.querySelector(".custom-area").innerHTML = applyColors(tmpcode.split("\n").join("<br>")).split("<!").join("&#60;!")
-        } else {
-            document.querySelector(".custom-area").innerHTML = applyColors(textArea.value);
-        }
+
+    }
+    if (started) {
+        let tmpcode = code.replaceAt([res.posProg - 1], `<span class='codepos'>${code[res.posProg - 1]}</span>`);
+        document.querySelector(".custom-area").innerHTML = applyColors(tmpcode.split("\n").join("<br>")).split("<!").join("&#60;!")
+    } else {
+        document.querySelector(".custom-area").innerHTML = applyColors(textArea.value);
     }
 }
 
@@ -46,5 +41,11 @@ function brackets() {
     else {
         bracket = true;
         document.getElementById("brackets").classList.remove('navimgdisabled')
+    }
+    if (started) {
+        let tmpcode = code.replaceAt([res.posProg - 1], `<span class='codepos'>${code[res.posProg - 1]}</span>`);
+        document.querySelector(".custom-area").innerHTML = applyColors(tmpcode.split("\n").join("<br>")).split("<!").join("&#60;!")
+    } else {
+        document.querySelector(".custom-area").innerHTML = applyColors(textArea.value);
     }
 }

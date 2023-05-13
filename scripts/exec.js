@@ -7,20 +7,17 @@ function executer() {
         clearInterval(interval);
         res.mem = cleanMem(res.mem);
 
-        if (res.step >= stepLimit) {
-            res.success = false;
-            res.str += "\n**ERROR :** Too many steps";
-        }
         document.getElementById("playpause").src = "images/play.jpg";
 
         started = false;
         pause = false;
         resetInput();
+
         console.log(res);
         return res;
     }
 
-    if (res.step > stepLimit) {
+    if (safemode && res.step > stepLimit) {
         res.success = false;
         clearInterval(interval)
         pause = false;
@@ -45,12 +42,12 @@ function executer() {
         let tmpcode = code.replaceAt([res.posProg], `<span class='codepos'>${code[res.posProg]}</span>`)
 
         //console.log(tmpcode);
-        document.getElementById('customarea').innerHTML = applyColors(tmpcode.split("\n").join("<br>")).split("<!").join("&#60;!")
+        document.getElementById('customarea').innerHTML = applyColors(tmpcode).split("\n").join("<br>").split("<!").join("&#60;!")
         if (cmd == "[") {
             if (debugbf) console.log("[ pointing", res.posMem, res.mem[res.posMem]);
             if (res.mem[res.posMem] == 0) {
                 let loopnb = 1;
-                while (loopnb > 0) {
+                while (loopnb > 0 && res.posProg < code.length) {
                     res.posProg++;
                     if (code[res.posProg] == "[") {
                         loopnb++;
@@ -68,7 +65,7 @@ function executer() {
             if (debugbf) console.log("] pointing", res.posMem, res.mem[res.posMem]);
             if (res.mem[res.posMem] != 0) {
                 let loopnb = 1;
-                while (loopnb > 0) {
+                while (loopnb > 0 && res.posProg >= 0) {
                     res.posProg--;
                     if (code[res.posProg] == "[") {
                         loopnb--;
@@ -131,7 +128,7 @@ function executer() {
         let affmem = res.mem.slice();
         if (res.posMem < res.mem.length)
             affmem[res.posMem] = `<span class='mempos'>${affmem[res.posMem]}</span>`;
-        document.getElementById("memory").innerHTML = "[ " + affmem.join(" | ") + " ]<br>Memory frame n°" + res.posMem
+        document.getElementById("memory").innerHTML = "[ " + affmem.join(" | ") + " ]<br>Memory frame n°" + (res.posMem + 1)
         document.getElementById("output").innerText = res.str;
 
     }
@@ -142,7 +139,7 @@ function executer() {
  */
 function quickexecuter() {
     while (res.posProg >= 0 && res.posProg < code.length) {
-        if (res.step > stepLimit) {
+        if (safemode && res.step > stepLimit) {
             res.success = false;
             clearInterval(interval)
             pause = false;
@@ -167,12 +164,12 @@ function quickexecuter() {
             let tmpcode = code.replaceAt([res.posProg], `<span class='codepos'>${code[res.posProg]}</span>`)
 
             //console.log(tmpcode);
-            document.getElementById('customarea').innerHTML = applyColors(tmpcode.split("\n").join("<br>")).split("<!").join("&#60;!");
+            document.getElementById('customarea').innerHTML = applyColors(tmpcode).split("\n").join("<br>").split("<!").join("&#60;!");
             if (cmd == "[") {
                 if (debugbf) console.log("[ pointing", res.posMem, res.mem[res.posMem]);
                 if (res.mem[res.posMem] == 0) {
                     let loopnb = 1;
-                    while (loopnb > 0) {
+                    while (loopnb > 0 && res.posProg < code.length) {
                         res.posProg++;
                         if (code[res.posProg] == "[") {
                             loopnb++;
@@ -192,7 +189,7 @@ function quickexecuter() {
                 if (debugbf) console.log("] pointing", res.posMem, res.mem[res.posMem]);
                 if (res.mem[res.posMem] != 0) {
                     let loopnb = 1;
-                    while (loopnb > 0) {
+                    while (loopnb > 0 && res.posProg >= 0) {
                         res.posProg--;
                         if (code[res.posProg] == "[") {
                             loopnb--;
@@ -255,7 +252,7 @@ function quickexecuter() {
             let affmem = res.mem.slice();
             if (res.posMem < res.mem.length)
                 affmem[res.posMem] = `<span class='mempos'>${affmem[res.posMem]}</span>`;
-            document.getElementById("memory").innerHTML = "[ " + affmem.join(" | ") + " ]<br>Memory frame n°" + res.posMem
+            document.getElementById("memory").innerHTML = "[ " + affmem.join(" | ") + " ]<br>Memory frame n°" + (res.posMem + 1)
             document.getElementById("output").innerText = res.str;
 
         }
@@ -263,10 +260,6 @@ function quickexecuter() {
 
     res.mem = cleanMem(res.mem);
 
-    if (res.step >= stepLimit) {
-        res.success = false;
-        res.str += "\n**ERROR :** Too many steps";
-    }
     document.getElementById("playpause").src = "images/play.jpg";
 
     started = false;
