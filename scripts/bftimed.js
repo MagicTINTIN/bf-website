@@ -2,7 +2,7 @@ document.getElementById("nojs").style.display = "none";
 
 const codeCharsList = [",", ".", "+", "-", "[", "]", "<", ">", "!"]
 
-const stepLimit = 100000000;
+var stepLimit = 10000;
 const debugbf = false;
 /**
  * @typedef {Object} bfreturn
@@ -33,9 +33,6 @@ var quickstarted = false;
 var code, res;
 
 
-
-
-// Panel exec Commands
 function actucounter() {
     valtime = document.getElementById("timesl").value //gets the oninput value
     document.getElementById('timechoice').innerHTML = valtime + "ms"; //displays this value to the html page
@@ -46,6 +43,11 @@ function actucounter() {
             executer();
         }, valtime);
     }
+}
+
+function actusafe() {
+    stepLimit = document.getElementById("safemaxsteps").value //gets the oninput value
+    console.log("new max step set : ", stepLimit);
 }
 
 function cleanMem(mem) {
@@ -83,6 +85,34 @@ function playpause() {
             executer();
         }, valtime);
     }
+}
+
+function step() {
+    if (!started) {
+        savedcode = document.getElementById('codeinput').value
+
+        code = savedcode//.cleantobf();
+        res = {
+            code: code,
+            step: 0,
+            str: "",
+            mem: [0],
+            success: true,
+            posProg: 0,
+            posMem: 0,
+        }
+
+        document.getElementById('codeinput').outerHTML = "<p id='codeinput'>"
+            + "</p>";
+        document.getElementById('codeinput').innerText = savedcode
+        document.getElementById("playpause").src = "images/pause.jpg";
+    }
+    quickstarted = false;
+    started = true;
+    pause = false;
+    executer();
+    pause = true;
+    document.getElementById("playpause").src = "images/play.jpg";
 }
 
 /**

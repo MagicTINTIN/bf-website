@@ -2,7 +2,7 @@
  * Brainfuck executor
  */
 function executer() {
-    if (!(res.posProg >= 0 && res.posProg < code.length && res.step < stepLimit)) {
+    if (!(res.posProg >= 0 && res.posProg < code.length)) {
 
         clearInterval(interval);
         res.mem = cleanMem(res.mem);
@@ -20,6 +20,19 @@ function executer() {
         return res;
     }
 
+    if (res.step > stepLimit) {
+        res.success = false;
+        clearInterval(interval)
+        pause = false;
+        started = false;
+        res.mem = cleanMem(res.mem);
+        res.str += "\n**SAFEMODE :** The program has reached the maximum of step defined";
+        resetInput();
+        document.getElementById("output").innerHTML = res.str;
+        alert("SAFEMODE : The program has reached the maximum of step defined");
+        document.getElementById("playpause").src = "images/play.jpg";
+        return res;
+    }
 
     if (!pause) {
 
@@ -128,7 +141,21 @@ function executer() {
  * Brainfuck executor
  */
 function quickexecuter() {
-    while (res.posProg >= 0 && res.posProg < code.length && res.step < stepLimit) {
+    while (res.posProg >= 0 && res.posProg < code.length) {
+        if (res.step > stepLimit) {
+            res.success = false;
+            clearInterval(interval)
+            pause = false;
+            started = false;
+            res.mem = cleanMem(res.mem);
+            res.str += "\n**SAFEMODE :** The program has reached the maximum of step defined";
+            resetInput();
+            document.getElementById("output").innerHTML = res.str;
+            alert("SAFEMODE : The program has reached the maximum of step defined");
+            document.getElementById("playpause").src = "images/play.jpg";
+            return res;
+        }
+
         if (!pause) {
 
             while (!codeCharsList.includes(code[res.posProg])) {

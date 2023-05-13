@@ -12,6 +12,7 @@
 
     <link href="styles/vars.css" rel="stylesheet">
     <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/nav.css" rel="stylesheet">
     <link href="styles/inputrange.css" rel="stylesheet">
     <link href="styles/codeformat.css" rel="stylesheet">
     <meta name="author" content="ALC ProduXion/Softplus">
@@ -27,17 +28,15 @@
         <nav>
             <section class="centeringnav">
                 <section class="navcolumnbtn">
-                    <img id="save" style="filter: sepia(0);" class="navimg navclmnbtn" onclick="save()"
+                    <img id="save" style="filter: sepia(1);" class="navimg navclmnbtn" onclick="save()"
                         src="images/save.jpg">
-                    <img id="load" style="filter: sepia(0);" class="navimg navclmnbtn" onclick="load()"
+                    <img id="load" style="filter: sepia(1);" class="navimg navclmnbtn" onclick="load()"
                         src="images/load.jpg">
                 </section>
                 <section class="navcolumnbtn">
-                    <img id="brackets" style="filter: saturate(0);" class="navimg navclmnbtn" onclick="brackets()"
-                        src="images/brackets.jpg">
+                    <img id="brackets" class="navimg navclmnbtn" onclick="brackets()" src="images/brackets.jpg">
 
-                    <img id="colors" style="filter: saturate(0);" class="navimg navclmnbtn" onclick="colors()"
-                        src="images/color.jpg">
+                    <img id="colors" class="navimg navclmnbtn" onclick="colors()" src="images/color.jpg">
                 </section>
                 <img id="restart" class="navimg navbtn" onclick="resetTime()" src="images/stop.jpg">
 
@@ -48,13 +47,12 @@
                 <img id="quickend" class="navimg navbtn" onclick="quickend()" src="images/fastforward.jpg">
                 <section class="navcolumnbtnsafe">
                     <section class="alignsafe">
-                        <img id="safe" style="filter: saturate(0);" class="navimg navclmnbtn" onclick="safe()"
-                            src="images/safe.jpg">
+                        <img id="safe" class="navimg navimgdisabled navclmnbtn" onclick="safe()" src="images/safe.jpg">
                     </section>
                     <p style="font-size: xx-small; color: white; text-align: center;">max steps</p>
 
                     <section class="alignsafe">
-                        <input id="safemaxsteps" class="inputsafe" type="number" value="10000" />
+                        <input id="safemaxsteps" class="inputsafe" type="number" value="10000" oninput="actusafe();" />
                     </section>
                 </section>
                 <!-- <img id="step" class="navimg navbtn"> -->
@@ -86,6 +84,7 @@
                     Essayez de désactiver votre bloqueur de scripts</p>
             </div>
         </div>
+        <script src="./scripts/buttons.js"></script>
         <script src="./scripts/exec.js"></script>
         <script src="./scripts/bftimed.js"></script>
     </div>

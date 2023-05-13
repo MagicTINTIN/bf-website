@@ -1,0 +1,139 @@
+nav {
+    height: 7vh;
+    width: 100%;
+    background-color: var(--dark-desat-gray);
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    border: var(--gray) 1px solid;
+}
+
+nav:hover {
+    border: var(--light-gray) 1px solid;
+}
+
+nav .centeringnav {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    color: var(--white);
+    font-weight: bolder;
+}
+
+/* NAV IMAGE */
+
+.navimg {
+    border: var(--gray) 1px solid;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.navimg:hover {
+    border: var(--light-gray) 1px solid;
+    filter: brightness(1.2);
+}
+
+.navimg:active {
+    filter: brightness(.7);
+}
+
+/* NAV IMAGE DISABLED */
+
+.navimgdisabled {
+    border: var(--gray) 1px solid;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    filter: saturate(0);
+}
+
+.navimgdisabled:hover {
+    border: var(--light-gray) 1px solid;
+    filter: brightness(1.2) saturate(0);
+}
+
+.navimgdisabled:active {
+    filter: brightness(.7) saturate(0);
+}
+
+/* NAV BUTTON */
+
+.navbtn {
+    max-width: 4.9vh;
+    height: 4.9vh;
+    width: auto;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.navcolumnbtn {
+    height: 100%;
+    max-width: 10%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+.navcolumnbtnsafe {
+    height: 100%;
+    width: 5%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+.alignsafe {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+.inputsafe {
+    width: 100%;
+    font-size: xx-small;
+}
+
+
+.navclmnbtn {
+    height: 3vh;
+    width: 3vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.navsld {
+    max-width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.navsld:hover {
+    filter: brightness(1.2);
+}
+
+
+nav input {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border: var(--gray) 1px solid;
+}
+
+nav input:hover {
+    border: var(--light-gray) 1px solid;
+}
