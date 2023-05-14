@@ -29,8 +29,9 @@
         <nav>
             <section class="centeringnav">
                 <section class="navcolumnbtn">
-                    <img id="save" class="navimg navclmnbtn" onclick="save()" src="images/save.jpg">
-                    <img id="load" class="navimg navclmnbtn" onclick="load()" src="images/load.jpg">
+                    <img id="save" class="navimg navtriclmnbtn" onclick="save()" src="images/save.jpg">
+                    <img id="load" class="navimg navtriclmnbtn" onclick="load()" src="images/load.jpg">
+                    <img id="settings" class="navimg navtriclmnbtn" onclick="settings()" src="images/settings.jpg">
                 </section>
                 <section class="navcolumnbtn">
                     <img id="brackets" class="navimg navclmnbtn" onclick="brackets()" src="images/brackets.jpg">
@@ -97,6 +98,46 @@
                 <h3>Load a saved program</h3>
                 <p>Programs are stored in cookies, if you disabled them you won't be able to save programs</p>
                 <div id="foundfiles">
+                </div>
+            </section>
+        </div>
+        <div class="loadingbackground" id="settingspanel">
+            <section class="bfcodediv centeredPopup">
+                <h3>Settings</h3>
+                <div id="stngslist">
+                    <section class="stglstElement">
+                        <div class="elementObjects">
+                            <span></span>
+                            <span>Delete all cookies</span>
+                            <img class="navimg deleteprog" src="images/bin.jpg" onclick="resetCookies()">
+                        </div>
+                    </section>
+                    <section class="stglstElement">
+                        <div class="elementObjects">
+                            <span></span>
+                            <span>Change theme</span>
+                            <img id="themebtn" class="navimg deleteprog" src="images/sun.jpg" onclick="changeTheme()">
+                        </div>
+                    </section>
+                    <section class="largeStglstElement">
+                        <h4>Copy this to your clipboard to transfer all your settings and programs to another device
+                        </h4>
+                        <p class="bfcodediv inputsettings" id="actualcookies">
+                        </p>
+                        <div class="elementObjects">
+                            <span></span>
+                            <img class="navimg deleteprog" src="images/copy.jpg" onclick="copyCookiesClipBoard()">
+                        </div>
+                    </section>
+                    <section class="largeStglstElement">
+                        <h4>Paste here from your clipboard to transfer all your settings and programs from another
+                            device</h4>
+                        <textarea id="yourcookies" class="bfcodediv inputsettings"></textarea>
+                        <div class="elementObjects">
+                            <span></span>
+                            <img class="navimg deleteprog" src="images/import.jpg" onclick="importAll()">
+                        </div>
+                    </section>
                 </div>
             </section>
         </div>

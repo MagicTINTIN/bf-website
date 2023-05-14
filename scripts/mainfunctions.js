@@ -2,7 +2,6 @@ document.getElementById("nojs").style.display = "none";
 
 const codeCharsList = [",", ".", "+", "-", "[", "]", "<", ">", "!"]
 
-var stepLimit = 10000;
 const debugbf = false;
 /**
  * @typedef {Object} bfreturn
@@ -32,7 +31,7 @@ String.prototype.biReplaceAt = function (index1, replacement1, index2, replaceme
 
 var started = false;
 var pause = true;
-var valtime = 20;
+
 var interval;
 var savedcode = "";
 var quickstarted = false;
@@ -50,11 +49,13 @@ function actucounter() {
             executer();
         }, valtime);
     }
+    setCookie('valtime', valtime, neverdelete);
 }
 
 function actusafe() {
     stepLimit = document.getElementById("safemaxsteps").value //gets the oninput value
     console.log("new max step set : ", stepLimit);
+    setCookie('steplimit', stepLimit, neverdelete);
 }
 
 function cleanMem(mem) {

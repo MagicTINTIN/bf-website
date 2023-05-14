@@ -1,5 +1,7 @@
 .loadingbackground {
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100;
     width: 100vw;
     height: 100vh;
@@ -52,4 +54,52 @@
 .deleteprog {
     height: 2vh;
     width: 2vh;
+}
+
+#stngslist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.stglstElement {
+    height: 3vh;
+    width: 80%;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 2vh;
+    margin: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 3px;
+}
+
+.largeStglstElement {
+    width: 80%;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 2vh;
+    margin: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 3px;
+}
+
+.stglstElement:hover, .largeStglstElement:hover {
+    background-color: var(--dark-blue);
+}
+
+.inputsettings {
+    width: calc(100% - 6px);
+    color: var(--white);
+}
+
+.elementObjects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

@@ -61,22 +61,22 @@
 
 .codecrease {
     /* color: #748E54; */
-    color: #D5FF57;
+    color: var(--codecrease);
 }
 
 .codemove {
     /* color: #D1462F; */
-    color: #FF8566;
+    color: var(--codemove);
 }
 
 .codeloop {
     /* color: #F58A07; */
-    color: #F3BA71;
+    color: var(--codeloop);
 }
 
 .codeio {
     /* color: #CA3CFF; */
-    color: #EA80FF;
+    color: var(--codeio);
 }
 
 .codetext {

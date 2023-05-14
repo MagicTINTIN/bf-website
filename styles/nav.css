@@ -114,6 +114,15 @@ nav .centeringnav {
     text-align: center;
 }
 
+.navtriclmnbtn {
+    height: 2vh;
+    width: 2vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    text-align: center;
+}
+
 .navsld {
     max-width: 20%;
     height: 100%;

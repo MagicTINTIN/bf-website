@@ -219,7 +219,7 @@ p {
 #maxstepstxt {
     font-size: 1vh;
     display: block;
-    color: white;
+    color: var(--white);
     text-align: center;
 }
 

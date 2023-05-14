@@ -19,7 +19,12 @@
     --dark-yellorange: #905C17;
     --yellorange: #F18F01; 
     --dark-pink: #7C3396;
-    --pink: #CA3CFF; 
+    --pink: #CA3CFF;
+    
+    --codeio: #EA80FF;
+    --codeloop:#F3BA71;
+    --codemove: #FF8566;
+    --codecrease:#D5FF57;
 
     --websitefonts: Arial, Helvetica, sans-serif;
 }
