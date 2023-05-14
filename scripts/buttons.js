@@ -211,17 +211,6 @@ function resetCookies() {
 }
 
 
-window.ontouchstart = function (event) {
-    if (event.target.id.startsWith("loadingfile")) {
-        document.getElementById('loadingfile').style.display = 'none'
-    }
-    if (event.target.id.startsWith("loadprg")) {
-        loadprog(event.target.id.slice(7))
-    }
-    if (event.target.id.startsWith("ltxtprg")) {
-        loadprog(event.target.id.slice(7))
-    }
-}
 
 function settings() {
     document.getElementById('settingspanel').style.display = 'flex'
@@ -317,6 +306,14 @@ function importAll() {
 }
 
 window.onclick = function (event) {
+    clickevents(event)
+}
+
+window.ontouchstart = function (event) {
+    clickevents(event)
+}
+
+function clickevents(event) {
     if (event.target.id.startsWith("loadingfile")) {
         document.getElementById('loadingfile').style.display = 'none'
     }

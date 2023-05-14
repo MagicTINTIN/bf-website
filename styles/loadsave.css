@@ -96,6 +96,13 @@
 .inputsettings {
     width: calc(100% - 6px);
     color: var(--white);
+    background-color: var(--dark-gray);
+    min-height: 1%;
+    border: var(--gray) 1px solid;
+}
+
+.inputsettings:hover {
+    border: var(--light-gray) 1px solid;
 }
 
 .elementObjects {
