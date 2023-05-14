@@ -8,9 +8,10 @@ const colorMap = {
     "<": "codemove",
     ">": "codemove",
     ".": "codeio",
-    ",": "codeio"
+    ",": "codeio",
+    "!": "codestop"
 };
-let textArea = document.getElementById("codeinput");
+
 let customArea = document.querySelector(".custom-area");
 let backdrop = document.querySelector(".backdrop");
 
@@ -113,7 +114,7 @@ function applyColors(text) {
         }
     }
     if (coloring) {
-        return textcodepos.replace(/\+|\-|\[|\]|\<|\>|\,|\./gi, function (m) {
+        return textcodepos.replace(/\+|\-|\[|\]|\<|\>|\,|\.|\!/gi, function (m) {
             let c = colorMap[m.toLowerCase()];
             return `<span class="${c}">${m}</span>`;
         }).split("{span class='linkedbracket'}").join("<span class='linkedbracket'>").split("{span class='codepos'}").join("<span class='codepos'>").split("{/span}").join("</span>");
@@ -122,3 +123,5 @@ function applyColors(text) {
         return textcodepos.split("{span class='linkedbracket'}").join("<span class='linkedbracket'>").split("{span class='codepos'}").join("<span class='codepos'>").split("{/span}").join("</span>");
     }
 }
+
+updatingText()

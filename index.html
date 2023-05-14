@@ -15,6 +15,7 @@
     <link href="styles/nav.css" rel="stylesheet">
     <link href="styles/inputrange.css" rel="stylesheet">
     <link href="styles/codeformat.css" rel="stylesheet">
+    <link href="styles/loadsave.css" rel="stylesheet">
     <meta name="author" content="ALC ProduXion/Softplus">
     <meta name="description" content="Online Brainfuck compiler">
 
@@ -28,10 +29,8 @@
         <nav>
             <section class="centeringnav">
                 <section class="navcolumnbtn">
-                    <img id="save" style="filter: sepia(1);" class="navimg navclmnbtn" onclick="save()"
-                        src="images/save.jpg">
-                    <img id="load" style="filter: sepia(1);" class="navimg navclmnbtn" onclick="load()"
-                        src="images/load.jpg">
+                    <img id="save" class="navimg navclmnbtn" onclick="save()" src="images/save.jpg">
+                    <img id="load" class="navimg navclmnbtn" onclick="load()" src="images/load.jpg">
                 </section>
                 <section class="navcolumnbtn">
                     <img id="brackets" class="navimg navclmnbtn" onclick="brackets()" src="images/brackets.jpg">
@@ -85,12 +84,23 @@
         <div class="bfcodediv" id="memory">
             [ <span class="mempos">0</span> ]
         </div>
-        <div class="bfcodediv" id="nojs">
-            <div>
-                <p>Hmm... une erreur est survenue.<br><br>Il semblerait que votre navigateur bloque le JavaScript...<br>
+        <div id="nojs">
+            <div class="bfcodediv">
+                <p>Hmm....<br><br>
+                    Your web browser seems to block JavaScript<br>
+                    Please disable your script blocker<br>
                     Essayez de désactiver votre bloqueur de scripts</p>
             </div>
         </div>
+        <div class="loadingbackground" id="loadingfile">
+            <section class="bfcodediv centeredPopup">
+                <h3>Load a saved program</h3>
+                <p>Programs are stored in cookies, if you disabled them you won't be able to save programs</p>
+                <div id="foundfiles">
+                </div>
+            </section>
+        </div>
+        <script src="./scripts/cookies.js"></script>
         <script src="./scripts/buttons.js"></script>
         <script src="./scripts/exec.js"></script>
         <script src="./scripts/mainfunctions.js"></script>

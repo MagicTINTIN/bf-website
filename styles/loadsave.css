@@ -1,0 +1,53 @@
+.loadingbackground {
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000069;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    display: none;
+}
+
+.centeredPopup {
+    margin: auto;
+    z-index: 1000;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+.prglstElement {
+    height: 3vh;
+    width: 80%;
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 2vh;
+    margin: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 3px;
+}
+
+.centeringelementlist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 2vh;
+}
+
+.prglstElement:hover {
+    background-color: var(--gray);
+    font-weight: bold;
+}
+
+.deleteprog {
+    height: 2vh;
+    width: 2vh;
+}
