@@ -158,17 +158,6 @@ function loadprog(progname) {
     updatingText()
 }
 
-window.onclick = function (event) {
-    if (event.target.id.startsWith("loadingfile")) {
-        document.getElementById('loadingfile').style.display = 'none'
-    }
-    if (event.target.id.startsWith("loadprg")) {
-        loadprog(event.target.id.slice(7))
-    }
-    if (event.target.id.startsWith("ltxtprg")) {
-        loadprog(event.target.id.slice(7))
-    }
-}
 
 function deleteProg(progname) {
     console.log("Deleting " + progname)
@@ -188,4 +177,30 @@ function deleteProg(progname) {
         setCookie('proglist', proglisttxt, neverdelete);
     }
     load()
+}
+
+
+window.ontouchstart = function (event) {
+    if (event.target.id.startsWith("loadingfile")) {
+        document.getElementById('loadingfile').style.display = 'none'
+    }
+    if (event.target.id.startsWith("loadprg")) {
+        loadprog(event.target.id.slice(7))
+    }
+    if (event.target.id.startsWith("ltxtprg")) {
+        loadprog(event.target.id.slice(7))
+    }
+}
+
+
+window.onclick = function (event) {
+    if (event.target.id.startsWith("loadingfile")) {
+        document.getElementById('loadingfile').style.display = 'none'
+    }
+    if (event.target.id.startsWith("loadprg")) {
+        loadprog(event.target.id.slice(7))
+    }
+    if (event.target.id.startsWith("ltxtprg")) {
+        loadprog(event.target.id.slice(7))
+    }
 }
