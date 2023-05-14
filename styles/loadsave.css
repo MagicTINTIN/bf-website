@@ -18,7 +18,7 @@
     width: 80vw;
     max-height: 80vh;
     overflow-y: auto;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
