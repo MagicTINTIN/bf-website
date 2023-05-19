@@ -1,3 +1,16 @@
+function actuaff() {
+    res.step++;
+    let tmpcode = code.replaceAt([res.posProg], `<span id='codepos' class='codepos'>${code[res.posProg]}</span>`)
+
+    //console.log(tmpcode);
+    document.getElementById('customarea').innerHTML = applyColors(tmpcode).split("\n").join("<br>").split("<!").join("&#60;!");
+    var codeposobject = document.getElementById('codepos');
+    var bdi = document.getElementById('backdropinput');
+    var icdiv = document.getElementById('codeinputdiv');
+    if (codeposobject)
+        bdi.scrollTop = codeposobject.offsetTop - Math.max(icdiv.scrollHeight, icdiv.clientHeight) / 2;
+}
+
 /**
  * Brainfuck executor
  */
@@ -38,11 +51,9 @@ function executer() {
         }
 
         const cmd = code[res.posProg];
-        res.step++;
-        let tmpcode = code.replaceAt([res.posProg], `<span class='codepos'>${code[res.posProg]}</span>`)
 
-        //console.log(tmpcode);
-        document.getElementById('customarea').innerHTML = applyColors(tmpcode).split("\n").join("<br>").split("<!").join("&#60;!")
+        actuaff();
+
         if (cmd == "[") {
             if (debugbf) console.log("[ pointing", res.posMem, res.mem[res.posMem]);
             if (res.mem[res.posMem] == 0) {
@@ -78,11 +89,16 @@ function executer() {
         else if (cmd == "." && (res.mem[res.posMem] >= 32 || true)) {
             if (debugbf) console.log(res.mem[res.posMem], String.fromCharCode(res.mem[res.posMem]))
             res.str += String.fromCharCode(res.mem[res.posMem]);
+
+            var div = document.getElementById("output");
+            var scrollHeight = Math.max(div.scrollHeight, div.clientHeight);
+            div.scrollTop = scrollHeight - div.clientHeight;
         }
         else if (cmd == ",") {
             let inputvalue = prompt("Please enter a character");
-            res.mem[res.posMem] = inputvalue.charCodeAt(0);
-
+            if (inputvalue) {
+                res.mem[res.posMem] = inputvalue.charCodeAt(0);
+            }
         }
         else if (cmd == ">") {
             res.posMem++;
@@ -160,11 +176,8 @@ function quickexecuter() {
             }
 
             const cmd = code[res.posProg];
-            res.step++;
-            let tmpcode = code.replaceAt([res.posProg], `<span class='codepos'>${code[res.posProg]}</span>`)
 
-            //console.log(tmpcode);
-            document.getElementById('customarea').innerHTML = applyColors(tmpcode).split("\n").join("<br>").split("<!").join("&#60;!");
+
             if (cmd == "[") {
                 if (debugbf) console.log("[ pointing", res.posMem, res.mem[res.posMem]);
                 if (res.mem[res.posMem] == 0) {
@@ -180,6 +193,7 @@ function quickexecuter() {
                 }
             }
             else if (cmd == "!") {
+                actuaff();
                 pause = true;
                 res.posProg++;
                 //console.log(tmpcode);
@@ -202,11 +216,16 @@ function quickexecuter() {
             else if (cmd == "." && (res.mem[res.posMem] >= 32 || true)) {
                 if (debugbf) console.log(res.mem[res.posMem], String.fromCharCode(res.mem[res.posMem]))
                 res.str += String.fromCharCode(res.mem[res.posMem]);
+
+                var div = document.getElementById("output");
+                var scrollHeight = Math.max(div.scrollHeight, div.clientHeight);
+                div.scrollTop = scrollHeight - div.clientHeight;
             }
             else if (cmd == ",") {
                 let inputvalue = prompt("Please enter a character");
-                res.mem[res.posMem] = inputvalue.charCodeAt(0);
-
+                if (inputvalue) {
+                    res.mem[res.posMem] = inputvalue.charCodeAt(0);
+                }
             }
             else if (cmd == ">") {
                 res.posMem++;
@@ -255,6 +274,10 @@ function quickexecuter() {
             document.getElementById("memory").innerHTML = "[ " + affmem.join(" | ") + " ]<br>Memory frame n°" + (res.posMem + 1)
             document.getElementById("output").innerText = res.str;
 
+        }
+        else {
+            actuaff();
+            return;
         }
     }
 

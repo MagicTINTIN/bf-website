@@ -43,7 +43,7 @@
 
 .backdrop {
     width: 84vw;
-    height: 40vh;
+    height: calc(40vh - 4px);
     
     position: absolute;
     z-index: 1;

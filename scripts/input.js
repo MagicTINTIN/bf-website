@@ -76,7 +76,7 @@ function replacetoprevious(txt, place) {
 const brkts = ['[', ']'];
 
 function applyColors(text) {
-    textcodepos = text.split("<span class='codepos'>").join("{span class='codepos'}").split("</span>").join("{/span}")
+    textcodepos = text.split("<span id='codepos' class='codepos'>").join("{span id='codepos' class='codepos'}").split("</span>").join("{/span}")
     // let re = new RegExp(Object.keys(colorMap).join("|"), "gi");
     var start = textArea.selectionStart;
     var end = textArea.selectionEnd;
@@ -117,10 +117,10 @@ function applyColors(text) {
         return textcodepos.replace(/\+|\-|\[|\]|\<|\>|\,|\.|\!/gi, function (m) {
             let c = colorMap[m.toLowerCase()];
             return `<span class="${c}">${m}</span>`;
-        }).split("{span class='linkedbracket'}").join("<span class='linkedbracket'>").split("{span class='codepos'}").join("<span class='codepos'>").split("{/span}").join("</span>");
+        }).split("{span class='linkedbracket'}").join("<span class='linkedbracket'>").split("{span id='codepos' class='codepos'}").join("<span id='codepos' class='codepos'>").split("{/span}").join("</span>");
     }
     else {
-        return textcodepos.split("{span class='linkedbracket'}").join("<span class='linkedbracket'>").split("{span class='codepos'}").join("<span class='codepos'>").split("{/span}").join("</span>");
+        return textcodepos.split("{span class='linkedbracket'}").join("<span class='linkedbracket'>").split("{span id='codepos' class='codepos'}").join("<span id='codepos' class='codepos'>").split("{/span}").join("</span>");
     }
 }
 
